@@ -17,6 +17,13 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
-  let e;
-  console.log("Hello Rigo from the console!");
+  let excuse = `${excuseGenerator(who)} ${excuseGenerator(
+    action
+  )} ${excuseGenerator(what)} ${excuseGenerator(when)}`;
+  let element = document.getElementById("excuse");
+  element.innerHTML = excuse;
 };
+
+function excuseGenerator(arrays) {
+  return arrays[Math.floor(Math.random() * arrays.length)];
+}
